@@ -10,11 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Highlight current nav link
-  var path = window.location.pathname.split('/').pop() || 'index.html';
+  // Highlight current nav link (works with or without .html in the URL)
+  var page = window.location.pathname.split('/').pop().replace(/\.html$/, '');
   document.querySelectorAll('.main-nav a').forEach(function (a) {
-    var href = a.getAttribute('href');
-    if (href === path || (path === '' && href === 'index.html')) {
+    var href = a.getAttribute('href').replace(/^\//, '').replace(/\.html$/, '');
+    var isHome = (page === '' || page === 'index') && (href === '' || href === 'index');
+    if (isHome || (href !== '' && href === page)) {
       a.classList.add('is-active');
     }
   });

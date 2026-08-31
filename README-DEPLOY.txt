@@ -21,6 +21,11 @@ contact-us.html                               Contact page (form is front-end on
 privacy-policy.html                           Privacy policy
 assets/css/styles.css                         All styling
 assets/js/main.js                             Mobile nav, FAQ, project filter, form handling
+.htaccess                                     Makes URLs clean (techembrace.com/about instead
+                                               of /about.html) — must be uploaded along with
+                                               everything else. It's a hidden file, so make sure
+                                               "Show Hidden Files" is on in File Manager when
+                                               checking it's there.
 assets/images/                                All photos, badges, and favicon
 
 HOW TO UPLOAD VIA cPanel FILE MANAGER
