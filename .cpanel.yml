@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/techembr/public_html/
-    - /usr/bin/rsync -rlptD --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' --exclude='README-DEPLOY.txt' --exclude='*.zip' ./ $DEPLOYPATH
+    - /usr/bin/rsync -rlt --chmod=Du=rwx,Dgo=rx,Fu=rw,Fgo=r --exclude='.git' --exclude='.gitignore' --exclude='.cpanel.yml' --exclude='README-DEPLOY.txt' --exclude='*.zip' ./ /home/techembr/public_html/
+    - /bin/chmod 755 /home/techembr/public_html
