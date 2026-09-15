@@ -1,0 +1,51 @@
+name: Build blog posts
+
+# Runs only when a post is added/changed/removed under content/blog/.
+# Converts each Markdown post into a static blog-<slug>.html page and
+# regenerates blog.html (the index), then commits those generated files
+# straight back to main. Because this workflow's own commit only ever
+# touches blog.html and blog-*.html (not content/blog/**), it does not
+# re-trigger itself — no infinite loop.
+#
+# Those generated files then flow through the existing .cpanel.yml
+# deploy pipeline exactly like every other page on the site: push to
+# GitHub -> cPanel "Update from Remote" -> "Deploy HEAD Commit".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/blog/**'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install build dependencies
+        run: npm install marked gray-matter --no-save --no-audit --no-fund
+
+      - name: Build blog pages
+        run: node scripts/build-blog.js
+
+      - name: Commit generated pages
+        run: |
+          git config user.name "techembrace-blog-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add blog.html blog-*.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Build blog pages [automated]"
+            git push
+          fi

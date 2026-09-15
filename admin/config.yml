@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: Techehood/techembrace-website
+  branch: main
+  # After you deploy the sveltia-cms-auth Cloudflare Worker (see setup
+  # checklist), replace the line below with your Worker's own URL,
+  # e.g. https://techembrace-cms-auth.YOUR-SUBDOMAIN.workers.dev
+  base_url: https://REPLACE-WITH-YOUR-CLOUDFLARE-WORKER-URL
+
+media_folder: "assets/images/blog"
+public_folder: "assets/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "URL Slug"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "Controls the page address, e.g. 'my-post' becomes techembrace.com/blog-my-post. Leave blank to auto-generate from the title."
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "1-2 sentences. Shown on the Blog list page and in Google search results."
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - { label: "Hero Image Alt Text", name: "hero_image_alt", widget: "string", required: false }
+      - label: "Pillar Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        options:
+          - "AI Strategy"
+          - "Immersive Learning"
+          - "Instructional Design"
+          - "EdTech GTM"
+          - "Staff Enablement"
+          - "AI Creative"
+          - "Company News"
+      - { label: "Body", name: "body", widget: "markdown" }
