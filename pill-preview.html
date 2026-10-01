@@ -250,6 +250,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .chip[aria-pressed="true"]{background:var(--navy);color:#fff}
 .scard{display:flex;flex-direction:column}
 .scard__pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:4/3;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
+.tour{margin:40px 0 8px}.tour h3{margin-bottom:6px}.tour>p{max-width:62ch}.tour__frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--panel-bg);margin:16px 0 12px}.tour__frame iframe{position:absolute;inset:0;width:100%;height:100%}.tour__alt{margin:0}
 .scard[hidden]{display:none}
 .scard p{flex:1}
 .scard h3{margin-top:4px}
@@ -721,11 +722,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 
       <div class="grid grid--auto">
         <article class="card scard" data-platform="bookcreator" data-for="education">
-          <div class="scard__thumb scard__thumb--bc" aria-hidden="true">Book Creator</div>
+          <img class="scard__shot" src="https://Techembrace.b-cdn.net/Portfolio/Multimodal%20Poetry%20in%20Motion.jpg" alt="Poetry in Motion, a multimodal digital book built in Book Creator" width="720" height="383" loading="lazy">
           <p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on Book Creator</span></p>
           <h3>Poetry in Motion</h3>
           <p>A page-by-page poetry learning book built around poems rooted in the Montserrat volcanic crisis, with our inclusive AI learning companion, The Bridge, built in. Poems by Terrez Thomas.</p>
-          <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="link-arrow" href="/portfolio-poetry-in-motion">Read case history <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
 
         <article class="card scard" data-for="education" data-platform="thinglink">
@@ -742,14 +743,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <h3>Catering induction</h3>
           <p>A 360° induction for new catering learners. They tap through tiles such as Your Kitchen, Your Knives, Your Uniform and Your Evidence, so they know what to expect before their first practical.</p>
           <a class="link-arrow" href="https://www.thinglink.com/scene/1885395932107768676" target="_blank" rel="noopener">View the example <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </article>
-
-        <article class="card scard" data-for="education" data-platform="thinglink">
-          <img class="scard__shot" src="https://techembrace.b-cdn.net/portfolio/six-room-interactive-tour.webp" alt="The opening screen of a six-room interactive tour in ThingLink, titled Your Interactive Tour: six rooms, one creative journey" width="720" height="383" loading="lazy">
-          <p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on ThingLink</span></p>
-          <h3>From Poem to Immersive Publication</h3>
-          <p>A six-room ThingLink course that takes a poem from the page to an immersive publication.</p>
-          <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
 
         <article class="card scard" data-platform="thinglink">
@@ -796,6 +789,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
       </div>
+
+      <section class="tour" data-for="education" aria-labelledby="tour-h">
+        <h3 id="tour-h">Try it: From Poem to Immersive Publication</h3>
+        <p>A six-room ThingLink course that takes a poem from the page to an immersive publication. Explore each room in order: finishing one opens the next.</p>
+        <div class="tour__frame">
+          <iframe src="https://www.thinglink.com/view/scene/2126965598733730469" title="Your Interactive Tour: six rooms, one creative journey" loading="lazy" style="border:none" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe>
+        </div>
+        <p class="tour__alt"><a class="link-arrow" href="https://www.thinglink.com/scene/2126965598733730469" target="_blank" rel="noopener">Open the tour in ThingLink <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </section>
 
       <div class="library" aria-labelledby="lib-h">
         <h3 id="lib-h">Library at a glance</h3>
