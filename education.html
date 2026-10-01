@@ -57,7 +57,7 @@ a{color:var(--royal)}
 .on-dark :focus-visible,.pill :focus-visible,.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--amber)}
 
 .skip{position:absolute;left:-999px;top:8px;background:var(--amber);color:var(--ink);padding:10px 16px;border-radius:8px;z-index:100;font-weight:600}
-.skip:focus{left:12px}
+.skip:focus{left:96px}
 
 /* ==========================================================
    2. TOP BAR
@@ -84,7 +84,7 @@ a{color:var(--royal)}
   box-shadow:0 10px 30px rgba(23,29,46,.28);
 }
 .pill__tab{
-  appearance:none;border:0;cursor:pointer;position:relative;
+  appearance:none;border:0;cursor:pointer;position:relative;text-decoration:none;
   width:var(--tab-w);min-height:var(--tab-h);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   background:transparent;color:rgba(255,255,255,.88);
@@ -97,8 +97,8 @@ a{color:var(--royal)}
 .pill__dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:0}
 
 /* current page = filled amber + dot (not colour alone) */
-.pill__tab[aria-current="true"]{background:var(--amber);color:var(--ink)}
-.pill__tab[aria-current="true"] .pill__dot{opacity:1}
+.pill__tab[aria-current="page"]{background:var(--amber);color:var(--ink)}
+.pill__tab[aria-current="page"] .pill__dot{opacity:1}
 
 /* open = joins the panel (the Uptale "notch") */
 .pill__tab[aria-expanded="true"]{background:var(--panel-bg);color:var(--ink)}
@@ -426,7 +426,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
    LIVE SITE HEADER + FOOTER, with mega menus for Education / Business
    (replaces the old side pill and prototype top bar)
    ========================================================== */
-body{padding-left:0 !important;padding-bottom:0 !important}
 html{scroll-padding-top:92px}
 .container{max-width:1180px;margin:0 auto;padding:0 24px}
 
@@ -517,7 +516,7 @@ html{scroll-padding-top:92px}
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header" id="top">
 <div class="container">
-<a class="logo" href="/"><img alt="Techembrace" class="logo-icon" src="/assets/images/techembrace-icon.png"/> Techembrace</a>
+<a class="logo" href="/"><img alt="Techembrace" class="logo-icon" src="https://techembrace.com/assets/images/techembrace-icon.png"/> Techembrace</a>
 <nav aria-label="Main" class="main-nav">
 <ul>
 <li><a href="/">Home</a></li>
@@ -574,8 +573,51 @@ html{scroll-padding-top:92px}
 <!-- ======================================================
      THE PILL — fixed, left edge, EDUCATION / BUSINESS
      ====================================================== -->
-
-
+<nav aria-label="Choose your audience" class="pill">
+<a aria-controls="pill-panel-education" aria-current="page" aria-expanded="false" class="pill__tab" data-aud="education" href="/education" id="pill-tab-education">
+<span aria-hidden="true" class="pill__dot"></span>
+<span class="pill__label">Education</span>
+</a>
+<a aria-controls="pill-panel-business" aria-expanded="false" class="pill__tab" data-aud="business" href="/business" id="pill-tab-business">
+<span aria-hidden="true" class="pill__dot"></span>
+<span class="pill__label">Business</span>
+</a>
+</nav>
+<div class="scrim" hidden=""></div><section aria-labelledby="pill-tab-education" class="panel panel--tl panel--education" hidden="" id="pill-panel-education" role="region">
+<p class="eyebrow">Education &amp; Training</p>
+<ul class="tl-grid">
+<li><a href="#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-globe"></use></svg></span><span class="tl-txt"><strong>Virtual field trips &amp; heritage</strong><span>Take learners somewhere real with 360° scenes.</span></span></a></li>
+<li><a href="#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-layers"></use></svg></span><span class="tl-txt"><strong>Interactive lessons</strong><span>Turn slides and documents into tap-to-explore learning.</span></span></a></li>
+<li><a href="#work"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-book"></use></svg></span><span class="tl-txt"><strong>Learner showcases</strong><span>Student work published with ThingLink and Book Creator.</span></span></a></li>
+<li><a href="#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-compass"></use></svg></span><span class="tl-txt"><strong>Vocational &amp; technical skills</strong><span>Walk through a workplace or workshop before the real thing.</span></span></a></li>
+<li><a href="#use-cases"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-infinity"></use></svg></span><span class="tl-txt"><strong>Neuro-inclusive design</strong><span>Clear routes, plain language and audio from the first draft.</span></span></a></li>
+<li><a href="#use-cases"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-users"></use></svg></span><span class="tl-txt"><strong>Staff CPD</strong><span>Practical training that builds confidence, not overwhelm.</span></span></a></li>
+</ul>
+<div class="tl-foot">
+<p><strong>Inclusive by design, adopted by staff.</strong></p>
+<div class="tl-foot__btns">
+<a class="btn btn--dark" href="#thinglink">See our ThingLink work <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<a class="link-arrow" href="#partner">Our partners <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+</div>
+</div>
+</section><section aria-labelledby="pill-tab-business" class="panel panel--tl panel--business" hidden="" id="pill-panel-business" role="region">
+<p class="eyebrow">Business &amp; Enterprise</p>
+<ul class="tl-grid">
+<li><a href="/business#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-compass"></use></svg></span><span class="tl-txt"><strong>Immersive onboarding</strong><span>Show new starters the workplace before day one.</span></span></a></li>
+<li><a href="/business#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-shield"></use></svg></span><span class="tl-txt"><strong>Safety &amp; procedure training</strong><span>Hotspot walk-throughs for kitchens, sites and workshops.</span></span></a></li>
+<li><a href="/business#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-users"></use></svg></span><span class="tl-txt"><strong>Employment &amp; workforce skills</strong><span>Courses that connect learning to work. Teamchefs course in build.</span></span></a></li>
+<li><a href="/business#work"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-image"></use></svg></span><span class="tl-txt"><strong>Interactive products &amp; tours</strong><span>Images and 360° tours that explain, not just show.</span></span></a></li>
+<li><a href="/business#use-cases"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-spark"></use></svg></span><span class="tl-txt"><strong>Staff enablement &amp; AI</strong><span>Role-based training so teams use AI well.</span></span></a></li>
+<li><a href="/business#partner"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-trend"></use></svg></span><span class="tl-txt"><strong>EdTech &amp; go-to-market</strong><span>Launch support for learning-technology founders.</span></span></a></li>
+</ul>
+<div class="tl-foot">
+<p><strong>Immersive learning your people finish.</strong></p>
+<div class="tl-foot__btns">
+<a class="btn btn--dark" href="/business#thinglink">See our ThingLink work <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<a class="link-arrow" href="/business#partner">Our partners <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+</div>
+</div>
+</section>
 <!-- EDUCATION PANEL (ThingLink-style: icon tile + title + one line) -->
 
 <!-- BUSINESS PANEL -->
@@ -914,7 +956,7 @@ html{scroll-padding-top:92px}
 <div class="container">
 <div class="footer-grid">
 <div>
-<span class="footer-logo"><img alt="Techembrace" class="logo-icon" src="/assets/images/techembrace-icon-light.png"/> Techembrace</span>
+<span class="footer-logo"><img alt="Techembrace" class="logo-icon" src="https://techembrace.com/assets/images/techembrace-icon-light.png"/> Techembrace</span>
 <p>Human intelligence, amplified by AI. Strategic learning transformation for organisations who want proof, not promises.</p>
 </div>
 <div>
@@ -963,6 +1005,27 @@ html{scroll-padding-top:92px}
   var desktop = function () { return window.matchMedia('(min-width: 1181px)').matches; };
   var hoverOK = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
+  var tabs  = Array.prototype.slice.call(document.querySelectorAll('.pill__tab'));
+  var scrim = document.querySelector('.scrim');
+  var here  = document.body.getAttribute('data-audience');
+  function pPanel(t){ return document.getElementById(t.getAttribute('aria-controls')); }
+  function closePill(returnFocus){
+    var f = null;
+    tabs.forEach(function (t) {
+      if (t.getAttribute('aria-expanded') === 'true') f = t;
+      t.setAttribute('aria-expanded', 'false');
+      pPanel(t).hidden = true;
+    });
+    scrim.hidden = true;
+    if (returnFocus && f) f.focus();
+  }
+  function openPill(t){
+    closeAll(false);
+    t.setAttribute('aria-expanded', 'true');
+    pPanel(t).hidden = false;
+    scrim.hidden = false;
+  }
+
   function parts(li){ return { btn: li.querySelector('.mega-toggle'), panel: li.querySelector('.panel') }; }
   function closeAll(returnFocus){
     var focusBtn = null;
@@ -973,6 +1036,7 @@ html{scroll-padding-top:92px}
       p.panel.hidden = true;
     });
     if (returnFocus && focusBtn) focusBtn.focus();
+    closePill(returnFocus && !focusBtn);
   }
   function open(li){
     closeAll(false);
@@ -999,6 +1063,27 @@ html{scroll-padding-top:92px}
     li.addEventListener('focusin', cancel);
   });
 
+  tabs.forEach(function (tab) {
+    var panel  = pPanel(tab);
+    var isHere = tab.getAttribute('data-aud') === here;
+    tab.addEventListener('click', function (e) {
+      if (isHere) {
+        e.preventDefault();
+        e.stopPropagation();
+        /* with a mouse the menu is already open from the hover, so a click keeps it open */
+        if (!hoverOK && tab.getAttribute('aria-expanded') === 'true') closePill(false); else openPill(tab);
+      }
+      /* the other tab is a normal link: the browser takes you to that page */
+    });
+    if (hoverOK) {
+      tab.addEventListener('mouseenter', function () { cancel(); openPill(tab); });
+      tab.addEventListener('mouseleave', later);
+      panel.addEventListener('mouseenter', cancel);
+      panel.addEventListener('mouseleave', later);
+    }
+  });
+  scrim.addEventListener('click', function () { closeAll(false); });
+
   if (toggle) toggle.addEventListener('click', function () {
     var openNow = nav.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', openNow ? 'true' : 'false');
@@ -1006,7 +1091,7 @@ html{scroll-padding-top:92px}
   });
 
   document.addEventListener('click', function (e) {
-    if (header && !header.contains(e.target)) closeAll(false);
+    if (header && !header.contains(e.target) && !e.target.closest('.panel') && !e.target.closest('.pill')) closeAll(false);
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
