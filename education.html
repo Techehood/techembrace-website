@@ -57,7 +57,7 @@ a{color:var(--royal)}
 .on-dark :focus-visible,.pill :focus-visible,.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--amber)}
 
 .skip{position:absolute;left:-999px;top:8px;background:var(--amber);color:var(--ink);padding:10px 16px;border-radius:8px;z-index:100;font-weight:600}
-.skip:focus{left:96px}
+.skip:focus{left:12px}
 
 /* ==========================================================
    2. TOP BAR
@@ -84,7 +84,7 @@ a{color:var(--royal)}
   box-shadow:0 10px 30px rgba(23,29,46,.28);
 }
 .pill__tab{
-  appearance:none;border:0;cursor:pointer;position:relative;text-decoration:none;
+  appearance:none;border:0;cursor:pointer;position:relative;
   width:var(--tab-w);min-height:var(--tab-h);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   background:transparent;color:rgba(255,255,255,.88);
@@ -97,8 +97,8 @@ a{color:var(--royal)}
 .pill__dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:0}
 
 /* current page = filled amber + dot (not colour alone) */
-.pill__tab[aria-current="page"]{background:var(--amber);color:var(--ink)}
-.pill__tab[aria-current="page"] .pill__dot{opacity:1}
+.pill__tab[aria-current="true"]{background:var(--amber);color:var(--ink)}
+.pill__tab[aria-current="true"] .pill__dot{opacity:1}
 
 /* open = joins the panel (the Uptale "notch") */
 .pill__tab[aria-expanded="true"]{background:var(--panel-bg);color:var(--ink)}
@@ -420,7 +420,80 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .qrcard p{margin:0 0 4px;color:var(--navy);line-height:1.4}
 .qrcard__note{font-size:.82rem;color:var(--muted) !important}
 @media (max-width:820px){.appsumo__top{grid-template-columns:1fr}.qrcard{width:100%;max-width:280px}}
-.footer-switch a{color:inherit;font-weight:600}
+
+/* ==========================================================
+   LIVE SITE HEADER + FOOTER, with mega menus for Education / Business
+   (replaces the old side pill and prototype top bar)
+   ========================================================== */
+body{padding-left:0 !important;padding-bottom:0 !important}
+html{scroll-padding-top:92px}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:24px;height:78px}
+.logo{display:flex;align-items:center;gap:16px;font-weight:800;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.logo .logo-icon{height:34px;width:auto;display:block}
+.main-nav > ul{list-style:none;display:flex;align-items:stretch;gap:26px;margin:0;padding:0;height:78px}
+.main-nav > ul > li{display:flex;align-items:center;white-space:nowrap}
+.main-nav > ul > li > a{font-weight:600;font-size:.95rem;color:var(--ink);text-decoration:none;padding:6px 0}
+.main-nav > ul > li > a:hover{color:var(--royal)}
+.main-nav > ul > li > a[aria-current="page"]{color:var(--royal);box-shadow:inset 0 -3px 0 var(--amber)}
+.mega-toggle{appearance:none;background:none;border:0;cursor:pointer;color:var(--ink);padding:8px 6px;margin-left:2px;display:inline-flex;align-items:center;border-radius:8px;min-width:32px;min-height:32px;justify-content:center}
+.mega-toggle svg{width:16px;height:16px;transition:transform .2s}
+.mega-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mega-toggle:hover{color:var(--royal)}
+.header-cta{display:flex;align-items:center;gap:14px}
+.hdr-btn{white-space:nowrap;display:inline-flex;align-items:center;padding:13px 24px;border-radius:999px;background:var(--royal);color:#fff;font-weight:600;font-size:.95rem;text-decoration:none;min-height:44px;transition:background .15s,transform .15s}
+.hdr-btn:hover{background:#3c4de0;transform:translateY(-1px)}
+.nav-toggle{display:none;appearance:none;border:1px solid var(--border);background:#fff;border-radius:12px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;color:var(--ink);align-items:center;justify-content:center}
+
+/* mega menu: a white card hanging under the header */
+.site-header .panel{
+  position:absolute;left:50%;right:auto;top:100%;bottom:auto;transform:translateX(-50%);
+  width:min(900px,calc(100vw - 32px));max-height:calc(100vh - 110px);overflow:auto;
+  padding:28px 28px 22px;border-radius:0 0 24px 24px;border-top:0;
+  background:var(--panel-bg);border:1px solid var(--border);
+  box-shadow:0 24px 60px rgba(23,29,46,.2);z-index:110;
+}
+.site-header .panel{white-space:normal}
+.site-header .panel[hidden]{display:none}
+.site-header .panel:not([hidden]){animation:megaIn .18s ease-out both}
+@keyframes megaIn{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.site-header .panel .tl-grid{grid-template-columns:1fr 1fr}
+
+/* live footer */
+.site-footer{background:linear-gradient(100deg,rgba(23,29,46,.96) 35%,rgba(23,29,46,.6) 100%),url("/assets/images/footer-ai-boardroom.jpg") right center / cover no-repeat,#171d2e;color:rgba(255,255,255,.7);padding:60px 0 30px;margin-top:0}
+.site-footer p{color:rgba(255,255,255,.7)}
+.site-footer a{color:rgba(255,255,255,.8);text-decoration:none}
+.site-footer a:hover{color:#fff}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-grid h4{color:#fff;font-size:.95rem;margin:0 0 16px}
+.footer-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:.85rem;flex-wrap:wrap;gap:10px}
+.footer-logo{color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:14px;display:flex;align-items:center;gap:16px}
+.footer-logo .logo-icon{height:30px;width:auto}
+
+@media (max-width:1320px){.hdr-btn{display:none}}
+@media (max-width:1180px){
+  .nav-toggle{display:inline-flex}
+  .main-nav > ul{display:none}
+  .main-nav.is-open > ul{
+    display:flex;flex-direction:column;align-items:stretch;gap:0;height:auto;
+    position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--border);
+    padding:8px 24px 18px;max-height:calc(100vh - 78px);overflow:auto;box-shadow:0 24px 40px rgba(23,29,46,.12)
+  }
+  .main-nav.is-open > ul > li{flex-wrap:wrap;white-space:normal;border-bottom:1px solid var(--border);min-height:52px}
+  .main-nav.is-open > ul > li > a:first-child{flex:1;padding:14px 0}
+  .site-header .panel{position:static;transform:none;width:100%;flex-basis:100%;max-height:none;margin:0 0 14px;border-radius:16px;border:1px solid var(--border);box-shadow:none;padding:18px 16px}
+  .site-header .panel:not([hidden]){animation:none}
+  .site-header .panel .tl-grid{grid-template-columns:1fr}
+  .site-header .panel .tl-txt span{display:none}
+  .hdr-btn{display:none}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media (max-width:820px){
+  .hero{padding-top:56px}
+}
 </style>
 </head>
 <body data-audience="education">
@@ -441,22 +514,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 </defs>
 </svg>
 <a class="skip" href="#main">Skip to content</a>
-<!-- ======================================================
-     THE PILL — fixed, left edge, EDUCATION / BUSINESS
-     ====================================================== -->
-<nav aria-label="Choose your audience" class="pill">
-<a aria-controls="panel-education" aria-current="page" aria-expanded="false" class="pill__tab" href="/education" id="tab-education">
-<span aria-hidden="true" class="pill__dot"></span>
-<span class="pill__label">Education</span>
-</a>
-<a aria-controls="panel-business" aria-expanded="false" class="pill__tab" href="/business" id="tab-business">
-<span aria-hidden="true" class="pill__dot"></span>
-<span class="pill__label">Business</span>
-</a>
-</nav>
-<div class="scrim" hidden=""></div>
-<!-- EDUCATION PANEL (ThingLink-style: icon tile + title + one line) -->
-<section aria-labelledby="tab-education" class="panel panel--tl panel--education" hidden="" id="panel-education" role="region">
+<header class="site-header" id="top">
+<div class="container">
+<a class="logo" href="/"><img alt="Techembrace" class="logo-icon" src="/assets/images/techembrace-icon.png"/> Techembrace</a>
+<nav aria-label="Main" class="main-nav">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/our-services">Services</a></li>
+<li class="has-mega"><a aria-current="page" href="/education" id="tab-education">Education</a><button aria-controls="panel-education" aria-expanded="false" aria-label="Show Education menu" class="mega-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button><section aria-labelledby="tab-education" class="panel panel--tl panel--education" hidden="" id="panel-education" role="region">
 <p class="eyebrow">Education &amp; Training</p>
 <ul class="tl-grid">
 <li><a href="#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-globe"></use></svg></span><span class="tl-txt"><strong>Virtual field trips &amp; heritage</strong><span>Take learners somewhere real with 360° scenes.</span></span></a></li>
@@ -473,9 +539,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 <a class="link-arrow" href="#partner">Our partners <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </div>
 </div>
-</section>
-<!-- BUSINESS PANEL -->
-<section aria-labelledby="tab-business" class="panel panel--tl panel--business" hidden="" id="panel-business" role="region">
+</section></li>
+<li class="has-mega"><a href="/business" id="tab-business">Business</a><button aria-controls="panel-business" aria-expanded="false" aria-label="Show Business menu" class="mega-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button><section aria-labelledby="tab-business" class="panel panel--tl panel--business" hidden="" id="panel-business" role="region">
 <p class="eyebrow">Business &amp; Enterprise</p>
 <ul class="tl-grid">
 <li><a href="/business#thinglink"><span class="tl-ico"><svg aria-hidden="true"><use href="#i-compass"></use></svg></span><span class="tl-txt"><strong>Immersive onboarding</strong><span>Show new starters the workplace before day one.</span></span></a></li>
@@ -492,23 +557,32 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 <a class="link-arrow" href="/business#partner">Our partners <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </div>
 </div>
-</section>
+</section></li>
+<li><a href="/projects">Projects</a></li>
+<li><a href="/ai-ethics-safety">AI Ethics</a></li>
+<li><a href="/contact-us">Contact us</a></li>
+</ul>
+</nav>
+<div class="header-cta">
+<a class="hdr-btn" href="/contact-us">Get started</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" type="button">☰</button>
+</div>
+</div>
+</header>
+
+<!-- ======================================================
+     THE PILL — fixed, left edge, EDUCATION / BUSINESS
+     ====================================================== -->
+
+
+<!-- EDUCATION PANEL (ThingLink-style: icon tile + title + one line) -->
+
+<!-- BUSINESS PANEL -->
+
 <!-- ======================================================
      PAGE
      ====================================================== -->
-<header class="topbar" id="top">
-<a aria-label="Techembrace home" class="brand" href="/">
-<span aria-hidden="true" class="brand__mark"><b>T</b><i>E</i></span>
-<span>Techembrace</span>
-</a>
-<nav aria-label="Main" class="topnav">
-<a href="#use-cases">Services</a>
-<a href="#work">Our work</a>
-<a href="#how">How we work</a>
-<a href="#partner">Partners</a>
-<a href="#partner">Contact</a>
-</nav>
-</header>
+
 <main id="main">
 <!-- HERO -->
 <section class="hero">
@@ -834,25 +908,120 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 </div>
 </section>
 </main>
+
 <footer class="site-footer">
-<div class="wrap"><strong>Techembrace</strong> — strategic AI consultancy for education and business. <small class="footer-switch">Also see our <a href="/business">Business &amp; Enterprise page</a>.</small></div>
+<div class="container">
+<div class="footer-grid">
+<div>
+<span class="footer-logo"><img alt="Techembrace" class="logo-icon" src="/assets/images/techembrace-icon-light.png"/> Techembrace</span>
+<p>Human intelligence, amplified by AI. Strategic learning transformation for organisations who want proof, not promises.</p>
+</div>
+<div>
+<h4>Site</h4>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/our-services">Services</a></li>
+<li><a href="/education">Education</a></li>
+<li><a href="/business">Business</a></li>
+<li><a href="/projects">Projects</a></li>
+<li><a href="/ai-ethics-safety">AI Ethics &amp; Safety</a></li>
+<li><a href="/contact-us">Contact</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4>Social Media</h4>
+<ul>
+<li><a href="https://x.com/Techembrace" rel="noopener" target="_blank">X</a></li>
+<li><a href="https://www.facebook.com/TechembraceUK/" rel="noopener" target="_blank">Facebook</a></li>
+<li><a href="https://www.instagram.com/techembrace/" rel="noopener" target="_blank">Instagram</a></li>
+<li><a href="https://www.linkedin.com/company/5235283/" rel="noopener" target="_blank">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© All rights reserved 2026</span>
+<span>Made with 💙 by Techembrace.com</span>
+</div>
+</div>
 </footer>
+
 <script>
 /* ==========================================================
-   PILL + MENU BEHAVIOUR (no libraries, no storage)
-   Each pill tab is a real link to its own page.
-   - Other page's tab: click goes to that page. Hover shows its menu.
-   - This page's tab: click or Enter toggles its menu.
+   HEADER MEGA MENUS + MOBILE NAV (no libraries, no storage)
+   Education and Business are real links to their own pages.
+   Hover or focus (or the arrow button) opens the mega menu.
    ========================================================== */
 (function () {
-  var here  = document.body.getAttribute('data-audience');
-  var tabs  = Array.prototype.slice.call(document.querySelectorAll('.pill__tab'));
-  var scrim = document.querySelector('.scrim');
-  var timer = null;
+  var header = document.querySelector('.site-header');
+  var nav    = document.querySelector('.main-nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var items  = Array.prototype.slice.call(document.querySelectorAll('.has-mega'));
+  var timer  = null;
+  var desktop = function () { return window.matchMedia('(min-width: 1181px)').matches; };
   var hoverOK = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  function panelFor(tab){ return document.getElementById(tab.getAttribute('aria-controls')); }
+  function parts(li){ return { btn: li.querySelector('.mega-toggle'), panel: li.querySelector('.panel') }; }
+  function closeAll(returnFocus){
+    var focusBtn = null;
+    items.forEach(function (li) {
+      var p = parts(li);
+      if (p.btn.getAttribute('aria-expanded') === 'true') focusBtn = p.btn;
+      p.btn.setAttribute('aria-expanded', 'false');
+      p.panel.hidden = true;
+    });
+    if (returnFocus && focusBtn) focusBtn.focus();
+  }
+  function open(li){
+    closeAll(false);
+    var p = parts(li);
+    p.btn.setAttribute('aria-expanded', 'true');
+    p.panel.hidden = false;
+  }
+  function cancel(){ clearTimeout(timer); }
+  function later(){ cancel(); timer = setTimeout(function(){ closeAll(false); }, 220); }
 
+  items.forEach(function (li) {
+    var p = parts(li);
+    p.btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (p.btn.getAttribute('aria-expanded') === 'true') closeAll(false); else open(li);
+    });
+    if (hoverOK) {
+      li.addEventListener('mouseenter', function () { if (desktop()) { cancel(); open(li); } });
+      li.addEventListener('mouseleave', function () { if (desktop()) later(); });
+    }
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) { if (desktop()) later(); }
+    });
+    li.addEventListener('focusin', cancel);
+  });
+
+  if (toggle) toggle.addEventListener('click', function () {
+    var openNow = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', openNow ? 'true' : 'false');
+    if (!openNow) closeAll(false);
+  });
+
+  document.addEventListener('click', function (e) {
+    if (header && !header.contains(e.target)) closeAll(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAll(true);
+      if (nav && nav.classList.contains('is-open')) { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    }
+  });
+  document.querySelectorAll('.panel a, .main-nav > ul > li > a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      closeAll(false);
+      if (nav) nav.classList.remove('is-open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* Platform filter chips on the work section */
   var chips = Array.prototype.slice.call(document.querySelectorAll('.filters .chip'));
   function applyFilter(f){
     chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === f ? 'true' : 'false'); });
@@ -861,52 +1030,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
     });
   }
   chips.forEach(function (c) { c.addEventListener('click', function () { applyFilter(c.getAttribute('data-filter')); }); });
-
-  function closeAll(returnFocus){
-    var focusTab = null;
-    tabs.forEach(function (t) {
-      if (t.getAttribute('aria-expanded') === 'true') focusTab = t;
-      t.setAttribute('aria-expanded', 'false');
-      panelFor(t).hidden = true;
-    });
-    scrim.hidden = true;
-    if (returnFocus && focusTab) focusTab.focus();
-  }
-  function open(tab){
-    closeAll(false);
-    tab.setAttribute('aria-expanded', 'true');
-    panelFor(tab).hidden = false;
-    scrim.hidden = false;
-  }
-  function cancel(){ clearTimeout(timer); }
-  function later(){ cancel(); timer = setTimeout(function(){ closeAll(false); }, 250); }
-
-  tabs.forEach(function (tab) {
-    var panel  = panelFor(tab);
-    var isHere = tab.getAttribute('data-audience') === here;
-    tab.addEventListener('click', function (e) {
-      if (isHere) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (tab.getAttribute('aria-expanded') === 'true') closeAll(false); else open(tab);
-      }
-      /* the other tab is a normal link: the browser takes you to that page */
-    });
-    if (hoverOK) {
-      tab.addEventListener('mouseenter', function(){ cancel(); open(tab); });
-      tab.addEventListener('mouseleave', later);
-      panel.addEventListener('mouseenter', cancel);
-      panel.addEventListener('mouseleave', later);
-    }
-  });
-
-  scrim.addEventListener('click', function(){ closeAll(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(true); });
-
-  /* Links inside menus: close the menu, then the browser follows the link */
-  document.querySelectorAll('.panel a').forEach(function (a) {
-    a.addEventListener('click', function () { closeAll(false); });
-  });
 
   /* Partner cards pre-select the tool in the enquiry form */
   document.querySelectorAll('[data-tool]').forEach(function (b) {
