@@ -249,6 +249,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .chip:hover{background:var(--wash)}
 .chip[aria-pressed="true"]{background:var(--navy);color:#fff}
 .scard{display:flex;flex-direction:column}
+.scard__pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:4/3;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
 .scard[hidden]{display:none}
 .scard p{flex:1}
 .scard h3{margin-top:4px}
@@ -727,7 +728,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
 
-        <article class="card scard" data-platform="thinglink">
+        <article class="card scard" data-for="education" data-platform="thinglink">
           <div class="scard__thumb scard__thumb--tl" aria-hidden="true">ThingLink</div>
           <p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on ThingLink</span></p>
           <h3>Verse in the Void</h3>
@@ -735,8 +736,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </article>
 
-        <article class="card scard" data-platform="thinglink">
-          <div class="scard__thumb scard__thumb--tl" aria-hidden="true">ThingLink</div>
+        <article class="card scard" data-platform="thinglink" data-for="education">
+          <img class="scard__shot" src="https://techembrace.b-cdn.net/portfolio/catering-induction-scene.webp" alt="A 360 degree catering kitchen in ThingLink with tappable tiles such as Your Kitchen, Your Knives, Your Uniform and Your Evidence" width="720" height="383" loading="lazy">
+          <p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
+          <h3>Catering induction</h3>
+          <p>A 360° induction for new catering learners. They tap through tiles such as Your Kitchen, Your Knives, Your Uniform and Your Evidence, so they know what to expect before their first practical.</p>
+          <a class="link-arrow" href="#" data-todo="add live link">View the example <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="card scard" data-for="education" data-platform="thinglink">
+          <img class="scard__shot" src="https://techembrace.b-cdn.net/portfolio/six-room-interactive-tour.webp" alt="The opening screen of a six-room interactive tour in ThingLink, titled Your Interactive Tour: six rooms, one creative journey" width="720" height="383" loading="lazy">
           <p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on ThingLink</span></p>
           <h3>From Poem to Immersive Publication</h3>
           <p>A six-room ThingLink course that takes a poem from the page to an immersive publication.</p>
@@ -749,6 +758,18 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <h3>Presenting ThingLink internationally</h3>
           <p>Immersive ThingLink work presented to High Commissioners in the West Indies and at African Expo events.</p>
           <a class="link-arrow" href="#" data-todo="add live link">See the work <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="card scard" data-platform="thinglink" data-for="business">
+          <div class="scard__pair">
+            <img class="scard__shot" src="https://techembrace.b-cdn.net/portfolio/orpington-town-masks-scene.webp" alt="A 360 degree view of a town centre high street in ThingLink, with hotspot icons for face masks, hand sanitiser and first aid" width="720" height="383" loading="lazy">
+            <img class="scard__shot" src="https://techembrace.b-cdn.net/portfolio/retail-park-covid-scene.webp" alt="A 360 degree view of a retail park road junction in ThingLink, with shopping basket hotspot icons" width="720" height="383" loading="lazy">
+          </div>
+          <p class="scard__meta"><span class="pcard__badge">COVID-19 era</span><span>Built on ThingLink</span></p>
+          <h3>Public information scenes from the COVID-19 period</h3>
+          <p>Two 360° scenes of real places, a town high street and a retail park, built with hotspots to give people clear information on the spot. Any guidance shown was for that time and no longer applies. They show how fast a real place can become a clear information tool.</p>
+          <p class="scard__links"><a class="link-arrow" href="https://www.thinglink.com/scene/1343057144806637570" target="_blank" rel="noopener">View the high street scene <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="link-arrow" href="#" data-todo="add retail park scene link">View the retail park scene <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
         </article>
 
         <article class="card scard" data-platform="thinglink">
