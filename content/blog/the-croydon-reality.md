@@ -1,6 +1,6 @@
 ---
 title: The Croydon Reality
-date: 2026-10-02T09:08:00
+date: 2026-10-02T09:22:00
 slug: croydon-digital-presence-reality
 excerpt: |-
   Across Croydon, independent retailers and small customer-facing businesses are losing visibility without realising it. The gap isn't effort — it's evidence.
