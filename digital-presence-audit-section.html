@@ -1,0 +1,190 @@
+<!-- ============================================================
+     The Digital Presence Audit — section block for /business.html
+     Anchor: #digital-presence-audit
+     Place before the Future Workforce Training section.
+     ============================================================ -->
+
+<section id="digital-presence-audit" class="dpa-section">
+  <div class="dpa-container">
+
+    <header class="dpa-header">
+      <p class="dpa-eyebrow">The Digital Presence Audit</p>
+      <h2 class="dpa-headline">See where your business is losing customers online.</h2>
+      <p class="dpa-subhead">
+        A five-day diagnostic for independent retail and small customer-facing
+        businesses — built to turn invisible gaps into evidence you can act on.
+      </p>
+    </header>
+
+    <div class="dpa-grid">
+
+      <div class="dpa-card">
+        <h3 class="dpa-card-title">What it examines</h3>
+        <ul class="dpa-list">
+          <li>Social media presence and activity</li>
+          <li>Website performance and clarity</li>
+          <li>Google Business Profile</li>
+          <li>Local competitor benchmarking</li>
+        </ul>
+      </div>
+
+      <div class="dpa-card">
+        <h3 class="dpa-card-title">What you receive</h3>
+        <ul class="dpa-list">
+          <li>Prioritised gap analysis report</li>
+          <li>Evidence-based recommendations</li>
+          <li>Clear next steps, ranked by impact</li>
+          <li>Benchmark against local competitors</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="dpa-bridge">
+      The audit's findings shape the training that follows.
+    </p>
+
+    <div class="dpa-cta-wrap">
+      <a href="/contact.html?enquiry=digital-presence-audit" class="dpa-cta">
+        Enquire about the audit
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     Scoped styles — move to the main stylesheet when integrating.
+     Uses the live brand tokens: Navy #2C3E50, Royal Blue #4169E1,
+     Amber #FAC775, Teal #8DBEC5. Fonts: Syne 700 / Inter.
+     ============================================================ -->
+<style>
+  .dpa-section {
+    background: #ffffff;
+    padding: 5rem 1.5rem;
+    color: #2C3E50;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .dpa-container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .dpa-header {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .dpa-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4169E1;
+    margin: 0 0 1rem;
+  }
+
+  .dpa-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    line-height: 1.2;
+    color: #2C3E50;
+    margin: 0 0 1.25rem;
+  }
+
+  .dpa-subhead {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #4a5a6a;
+    margin: 0;
+  }
+
+  .dpa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 0 0 3rem;
+  }
+
+  .dpa-card {
+    background: #f7f9fb;
+    border-left: 4px solid #FAC775;
+    padding: 2rem 1.75rem;
+    border-radius: 4px;
+  }
+
+  .dpa-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #2C3E50;
+    margin: 0 0 1rem;
+  }
+
+  .dpa-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dpa-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #2C3E50;
+  }
+
+  .dpa-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 8px;
+    height: 8px;
+    background: #8DBEC5;
+    border-radius: 50%;
+  }
+
+  .dpa-bridge {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: #4a5a6a;
+    line-height: 1.5;
+  }
+
+  .dpa-cta-wrap {
+    text-align: center;
+  }
+
+  .dpa-cta {
+    display: inline-block;
+    background: #4169E1;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .dpa-cta:hover,
+  .dpa-cta:focus {
+    background: #2C3E50;
+    outline: 2px solid #FAC775;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .dpa-section { padding: 3.5rem 1.25rem; }
+    .dpa-card    { padding: 1.5rem 1.25rem; }
+  }
+</style>
