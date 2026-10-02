@@ -1,5 +1,5 @@
 /* ============================================================
-   Techembrace — static rebuild
+   Techembrace â€” static rebuild
    ============================================================ */
 
 :root {
@@ -512,10 +512,8 @@ textarea { min-height: 140px; resize: vertical; }
 .site-header .mn-panel .mn-grid li{display:block;white-space:normal}
 .site-header .mn-panel .mn-grid a{display:flex;align-items:flex-start;gap:14px;padding:12px;border-radius:16px;text-decoration:none;color:#171d2e;min-height:64px;font-size:inherit;font-weight:400}
 .site-header .mn-panel .mn-grid a:hover{background:#fff;color:#171d2e}
-.mn-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#1f2740}
+.mn-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#4d5eef;background:#eceefe}
 .mn-ico svg{width:24px;height:24px}
-.mn-panel--education .mn-ico{background:#d4e8eb}
-.mn-panel--business .mn-ico{background:#fde6c0}
 .mn-txt{display:flex;flex-direction:column;gap:2px}
 .mn-txt strong{font-weight:700;font-size:15px;line-height:1.3}
 .mn-txt span{font-size:.9rem;line-height:1.5;color:#667085}
