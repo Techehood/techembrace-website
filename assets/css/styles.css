@@ -550,3 +550,15 @@ textarea { min-height: 140px; resize: vertical; }
   .site-header .mn-panel .mn-grid a{padding:8px 10px;min-height:56px}
   .mn-txt span{display:none}
 }
+
+/* ---------- phone fixes: no sideways scrolling ---------- */
+img{max-width:100%;height:auto}
+.hero-grid > *, .about-flex > *, .contact-split > *, .newsletter-grid > *, .founder-flex > *{min-width:0}
+@media (max-width:900px){.pillars-grid[style]{grid-template-columns:repeat(2,1fr) !important}}
+@media (max-width:600px){.pillars-grid[style]{grid-template-columns:1fr !important}}
+.pillars-grid > *, .pillar-detail-grid > *{min-width:0}
+@media (max-width:900px){.pillar-detail-grid[style]{grid-template-columns:repeat(2,1fr) !important}}
+@media (max-width:600px){.pillar-detail-grid[style]{grid-template-columns:1fr !important}}
+@media (max-width:700px){
+  .compare-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
