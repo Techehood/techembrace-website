@@ -248,7 +248,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .chip:hover{background:var(--wash)}
 .chip[aria-pressed="true"]{background:var(--navy);color:#fff}
 .scard{display:flex;flex-direction:column}
-.scard__pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:4/3;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
+.scard__pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:8/9;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
 .tour{margin:40px 0 8px}.tour h3{margin-bottom:6px}.tour>p{max-width:62ch}.tour__frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--panel-bg);margin:16px 0 12px}.tour__frame iframe{position:absolute;inset:0;width:100%;height:100%}.tour__alt{margin:0}
 .scard[hidden]{display:none}
 .scard p{flex:1}
@@ -427,6 +427,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
    (replaces the old side pill and prototype top bar)
    ========================================================== */
 html{scroll-padding-top:92px}
+/* menu icon tiles use the Techembrace royal blue, not the audience colours */
+.tl-ico,.panel--education .tl-ico,.panel--business .tl-ico,.acc .tl-ico{background:#eceefe;color:#4d5eef}
 .container{max-width:1180px;margin:0 auto;padding:0 24px}
 
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -765,8 +767,8 @@ html{scroll-padding-top:92px}
 <img alt="A 360 degree view of a retail park road junction in ThingLink, with shopping basket hotspot icons" class="scard__shot" height="383" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/retail-park-covid-scene.webp" width="720"/>
 </div>
 <p class="scard__meta"><span class="pcard__badge">COVID-19 era</span><span>Built on ThingLink</span></p>
-<h3>Public information scenes from the COVID-19 period</h3>
-<p>Two 360° scenes of real places, a Croydon town centre street and a retail park, built with hotspots to give people clear information on the spot. Any guidance shown was for that time and no longer applies. They show how fast a real place can become a clear information tool.</p>
+<h3>COVID-19 information</h3>
+<p>Two 360° scenes of real places, a Croydon street and a retail park, with hotspots for clear on-the-spot information. Guidance shown was for that time only.</p>
 <p class="scard__links"><a class="link-arrow" href="https://www.thinglink.com/scene/1343057144806637570" rel="noopener" target="_blank">View the Croydon scene <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 <a class="link-arrow" data-todo="add retail park scene link" href="#">View the retail park scene <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a></p>
 </article>
@@ -774,7 +776,7 @@ html{scroll-padding-top:92px}
 <img alt="A 360 degree view of a high street in Orpington in ThingLink, with blue hotspot markers on the buildings that open the history of each one" class="scard__shot" height="383" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/orpington-history-scene.webp" width="720"/>
 <p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
 <h3>Orpington history</h3>
-<p>A ThingLink scene exploring the history of Orpington's buildings.</p>
+<p>A ThingLink scene that brings the history of Orpington's high street buildings to life, with hotspots on each building that open its story.</p>
 <a class="link-arrow" href="https://www.thinglink.com/scene/1829895687160988516" rel="noopener" target="_blank">View the example <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 

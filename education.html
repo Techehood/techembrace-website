@@ -248,7 +248,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .chip:hover{background:var(--wash)}
 .chip[aria-pressed="true"]{background:var(--navy);color:#fff}
 .scard{display:flex;flex-direction:column}
-.scard__pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:4/3;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
+.scard__pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-bottom:16px}.scard__pair .scard__shot{margin-bottom:0;aspect-ratio:8/9;object-fit:cover}.scard .scard__links{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;margin:12px 0 0}.scard .scard__links .link-arrow{margin-top:0}
 .tour{margin:40px 0 8px}.tour h3{margin-bottom:6px}.tour>p{max-width:62ch}.tour__frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:var(--panel-bg);margin:16px 0 12px}.tour__frame iframe{position:absolute;inset:0;width:100%;height:100%}.tour__alt{margin:0}
 .scard[hidden]{display:none}
 .scard p{flex:1}
@@ -427,6 +427,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
    (replaces the old side pill and prototype top bar)
    ========================================================== */
 html{scroll-padding-top:92px}
+/* menu icon tiles use the Techembrace royal blue, not the audience colours */
+.tl-ico,.panel--education .tl-ico,.panel--business .tl-ico,.acc .tl-ico{background:#eceefe;color:#4d5eef}
 .container{max-width:1180px;margin:0 auto;padding:0 24px}
 
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -800,21 +802,21 @@ html{scroll-padding-top:92px}
 <img alt="Poetry in Motion, a multimodal digital book built in Book Creator" class="scard__shot" height="383" loading="lazy" src="https://Techembrace.b-cdn.net/Portfolio/Multimodal%20Poetry%20in%20Motion.jpg" width="720"/>
 <p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on Book Creator</span></p>
 <h3>Poetry in Motion</h3>
-<p>A page-by-page poetry learning book built around poems rooted in the Montserrat volcanic crisis, with our inclusive AI learning companion, The Bridge, built in. Poems by Terrez Thomas.</p>
+<p>A page-by-page poetry book rooted in the Montserrat volcanic crisis, with our inclusive AI learning companion, The Bridge, built in. Poems by Terrez Thomas.</p>
 <a class="link-arrow" href="/portfolio-poetry-in-motion">Read case history <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 <article class="card scard" data-platform="thinglink">
-<div aria-hidden="true" class="scard__thumb scard__thumb--tl">ThingLink</div>
-<p class="scard__meta"><span class="pcard__badge">Current</span><span>Built on ThingLink</span></p>
-<h3>Verse in the Void</h3>
-<p>The same project reimagined as a 360° space. Learners explore the poem through hotspots, with The Bridge built in.</p>
-<a class="link-arrow" data-todo="add live link" href="#">View the example <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<img alt="A ThingLink slide titled Fresh Fruit, with quality points and five fruit groups: soft, hard, stoned, citrus and tropical" class="scard__shot" height="405" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/fruit-and-veg-scene.webp" width="720"/>
+<p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
+<h3>Fruit &amp; Veg</h3>
+<p>A ThingLink scene on fresh fruit and veg quality. Learners explore each fruit group and the quality points to check before they prepare and serve.</p>
+<a class="link-arrow" href="https://www.thinglink.com/scene/1854148654114275814" rel="noopener" target="_blank">View the example <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 <article class="card scard" data-platform="thinglink">
 <img alt="A 360 degree catering kitchen in ThingLink with tappable tiles such as Your Kitchen, Your Knives, Your Uniform and Your Evidence" class="scard__shot" height="383" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/catering-induction-scene.webp" width="720"/>
 <p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
 <h3>Catering induction</h3>
-<p>A 360° induction for new catering learners. They tap through tiles such as Your Kitchen, Your Knives, Your Uniform and Your Evidence, so they know what to expect before their first practical.</p>
+<p>A 360° induction for new catering learners. They tap tiles such as Your Kitchen and Your Knives to know what to expect before their first practical.</p>
 <a class="link-arrow" href="https://www.thinglink.com/scene/1885395932107768676" rel="noopener" target="_blank">View the example <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 
@@ -822,15 +824,15 @@ html{scroll-padding-top:92px}
 <img alt="A 360 degree view of a high street in Orpington in ThingLink, with blue hotspot markers on the buildings that open the history of each one" class="scard__shot" height="383" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/orpington-history-scene.webp" width="720"/>
 <p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
 <h3>Orpington history</h3>
-<p>A ThingLink scene exploring the history of Orpington's buildings.</p>
+<p>A ThingLink scene that brings the history of Orpington's high street buildings to life, with hotspots on each building that open its story.</p>
 <a class="link-arrow" href="https://www.thinglink.com/scene/1829895687160988516" rel="noopener" target="_blank">View the example <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 <article class="card scard" data-platform="thinglink">
-<div aria-hidden="true" class="scard__thumb scard__thumb--tl">ThingLink</div>
-<p class="scard__meta"><span class="pcard__badge">Before COVID-19</span><span>Built on ThingLink</span></p>
-<h3>Education showcase</h3>
-<p>An education showcase built in ThingLink before the COVID-19 period.</p>
-<a class="link-arrow" href="https://www.thinglink.com/scene/1395317579874041859" rel="noopener" target="_blank">View the showcase <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<img alt="A 360 degree catering kitchen in ThingLink with hotspot icons for documents, uniform, equipment and knives" class="scard__shot" height="405" loading="lazy" src="https://techembrace.b-cdn.net/Portfolio/fish-shellfish-assessment-scene.webp" width="720"/>
+<p class="scard__meta"><span class="pcard__badge">Example</span><span>Built on ThingLink</span></p>
+<h3>Fish and shellfish</h3>
+<p>Level 2 Assessment 711: prepare and cook fish and shellfish. A catering assessment built in ThingLink, set in a real kitchen.</p>
+<a class="link-arrow" href="https://www.thinglink.com/video/1503647178638229506" rel="noopener" target="_blank">Watch the video <span class="sr-only">(opens in a new tab)</span> <svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
 </article>
 <article class="card scard" data-platform="thinglink">
 <img alt="A 360 degree catering kitchen in ThingLink with interactive hotspots for video, images, books and learning apps" class="scard__shot" height="383" src="https://techembrace.b-cdn.net/Portfolio/thinglink-360-catering-kitchen-card.webp" width="720"/>
