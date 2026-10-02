@@ -479,3 +479,74 @@ textarea { min-height: 140px; resize: vertical; }
 .blog-post-body code { background: var(--paper-soft); padding: 2px 6px; border-radius: 6px; font-size: .92em; }
 .blog-post-body pre { background: var(--navy); color: #fff; padding: 18px; border-radius: var(--radius); overflow-x: auto; margin-bottom: 1.3em; }
 .blog-post-body pre code { background: none; padding: 0; color: inherit; }
+
+/* ==========================================================
+   EDUCATION + BUSINESS MEGA MENUS (header)
+   Added for the /education and /business pages. Self-contained:
+   uses its own colours so nothing else on the site is affected.
+   ========================================================== */
+.site-header .container{gap:24px}
+.main-nav > ul{gap:26px;align-items:center}
+.main-nav > ul > li{display:flex;align-items:center;white-space:nowrap}
+.mn-toggle{appearance:none;background:none;border:0;cursor:pointer;color:#171d2e;padding:8px 6px;margin-left:2px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;min-width:32px;min-height:32px}
+.mn-toggle svg{width:16px;height:16px;transition:transform .2s}
+.mn-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.mn-toggle:hover{color:#4d5eef}
+.mn-toggle:focus-visible,.mn-panel a:focus-visible{outline:3px solid #4d5eef;outline-offset:2px}
+
+/* the card that hangs under the header */
+.site-header .mn-panel{
+  position:absolute;left:50%;top:100%;transform:translateX(-50%);
+  width:min(900px,calc(100vw - 32px));max-height:calc(100vh - 110px);overflow:auto;
+  padding:28px 28px 22px;border-radius:0 0 24px 24px;
+  background:#f5f6fa;border:1px solid #e6e8f0;border-top:0;
+  box-shadow:0 24px 60px rgba(23,29,46,.2);z-index:110;
+  white-space:normal;text-align:left;color:#171d2e;
+}
+.site-header .mn-panel[hidden]{display:none}
+.site-header .mn-panel:not([hidden]){animation:mnIn .18s ease-out both}
+@keyframes mnIn{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.site-header .mn-panel svg{display:block}
+.site-header .mn-eyebrow{font-weight:700;font-size:12px;line-height:1.2;letter-spacing:.16em;text-transform:uppercase;color:#3c4de0;margin:0 0 14px 4px}
+.site-header .mn-panel .mn-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.site-header .mn-panel .mn-grid li{display:block;white-space:normal}
+.site-header .mn-panel .mn-grid a{display:flex;align-items:flex-start;gap:14px;padding:12px;border-radius:16px;text-decoration:none;color:#171d2e;min-height:64px;font-size:inherit;font-weight:400}
+.site-header .mn-panel .mn-grid a:hover{background:#fff;color:#171d2e}
+.mn-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#1f2740}
+.mn-ico svg{width:24px;height:24px}
+.mn-panel--education .mn-ico{background:#d4e8eb}
+.mn-panel--business .mn-ico{background:#fde6c0}
+.mn-txt{display:flex;flex-direction:column;gap:2px}
+.mn-txt strong{font-weight:700;font-size:15px;line-height:1.3}
+.mn-txt span{font-size:.9rem;line-height:1.5;color:#667085}
+.mn-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;padding-top:16px;border-top:1px solid #e6e8f0}
+.mn-foot p{margin:0;font-size:.97rem}
+.mn-foot__btns{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.site-header .mn-panel .mn-btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;background:#171d2e;color:#fff;font-weight:700;font-size:14px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.site-header .mn-panel .mn-btn:hover{background:#0f1422;color:#fff}
+.site-header .mn-panel .mn-btn svg{width:20px;height:20px}
+.site-header .mn-panel .mn-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;color:#171d2e;text-decoration:none;min-height:44px}
+.site-header .mn-panel .mn-link:hover{color:#171d2e;text-decoration:underline}
+.site-header .mn-panel .mn-link svg{width:22px;height:22px;transition:transform .2s}
+.site-header .mn-panel .mn-link:hover svg{transform:translateX(4px)}
+
+/* narrower screens: the existing menu was hidden below 900px with no way to open it,
+   so from 1180px down we show the menu button and an accordion instead */
+.nav-toggle{appearance:none;border:1px solid #e6e8f0;background:#fff;border-radius:12px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;color:#171d2e;align-items:center;justify-content:center}
+@media (max-width:1320px){.header-cta .btn{display:none}}
+@media (max-width:1180px){
+  .nav-toggle{display:inline-flex}
+  .main-nav > ul{display:none}
+  .main-nav.is-open > ul{
+    display:flex;flex-direction:column;align-items:stretch;gap:0;height:auto;
+    position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #e6e8f0;
+    padding:8px 24px 18px;max-height:calc(100vh - 78px);overflow:auto;box-shadow:0 24px 40px rgba(23,29,46,.12)
+  }
+  .main-nav.is-open > ul > li{flex-wrap:wrap;white-space:normal;border-bottom:1px solid #e6e8f0;min-height:52px}
+  .main-nav.is-open > ul > li > a:first-child{flex:1;padding:14px 0}
+  .site-header .mn-panel{position:static;transform:none;width:100%;flex-basis:100%;max-height:none;margin:0 0 14px;border-radius:16px;border:1px solid #e6e8f0;box-shadow:none;padding:18px 16px}
+  .site-header .mn-panel:not([hidden]){animation:none}
+  .site-header .mn-panel .mn-grid{grid-template-columns:1fr}
+  .site-header .mn-panel .mn-grid a{padding:8px 10px;min-height:56px}
+  .mn-txt span{display:none}
+}
