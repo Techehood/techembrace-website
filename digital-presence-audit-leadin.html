@@ -1,0 +1,188 @@
+<!-- ============================================================
+     Croydon Reality — lead-in block for the Digital Presence Audit
+     Place IMMEDIATELY ABOVE #digital-presence-audit on /business.html
+     ============================================================ -->
+
+<section id="dpa-leadin" class="dpa-leadin-section">
+  <div class="dpa-leadin-container">
+
+    <header class="dpa-leadin-header">
+      <p class="dpa-leadin-eyebrow">The Croydon Reality</p>
+      <h2 class="dpa-leadin-headline">
+        Across Croydon, independent retailers and small customer-facing
+        businesses are losing visibility they don't know they've lost.
+      </h2>
+    </header>
+
+    <ul class="dpa-stats">
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">67%</span>
+        <span class="dpa-stat-text">
+          of customers check a business online before walking through the door.
+        </span>
+      </li>
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">46%</span>
+        <span class="dpa-stat-text">
+          of all Google searches are local &mdash; "near me," "open now,"
+          "best in Croydon."
+        </span>
+      </li>
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">42%</span>
+        <span class="dpa-stat-text">
+          more direction requests go to a Google Business Profile with photos
+          than one without.
+        </span>
+      </li>
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">75%</span>
+        <span class="dpa-stat-text">
+          of customers never scroll past the first page of search results.
+        </span>
+      </li>
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">5&ndash;9%</span>
+        <span class="dpa-stat-text">
+          local revenue swing from a one-star rating difference.
+        </span>
+      </li>
+      <li class="dpa-stat">
+        <span class="dpa-stat-figure">35%</span>
+        <span class="dpa-stat-text">
+          more customer engagement for businesses that respond to reviews.
+        </span>
+      </li>
+    </ul>
+
+    <p class="dpa-leadin-close">
+      The gap isn&rsquo;t effort. It&rsquo;s <strong>evidence.</strong>
+      Most owners don&rsquo;t know what their presence actually looks like
+      to a customer searching from a phone in Croydon on a Saturday afternoon.
+    </p>
+
+    <p class="dpa-leadin-handoff">
+      The Digital Presence Audit shows you &mdash; in five days.
+    </p>
+
+    <p class="dpa-leadin-sources">
+      Sources: BrightLocal Local Consumer Review Survey; Google Local Search
+      behaviour data; Moz Local Search Ranking Factors.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     Scoped styles — move to the main stylesheet when integrating.
+     Uses the live brand tokens: Navy #2C3E50, Royal Blue #4169E1,
+     Amber #FAC775, Teal #8DBEC5. Fonts: Syne 700 / Inter.
+     ============================================================ -->
+<style>
+  .dpa-leadin-section {
+    background: #2C3E50;
+    padding: 5rem 1.5rem;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .dpa-leadin-container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .dpa-leadin-header {
+    max-width: 820px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .dpa-leadin-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FAC775;
+    margin: 0 0 1rem;
+  }
+
+  .dpa-leadin-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    line-height: 1.3;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .dpa-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .dpa-stat {
+    background: rgba(255, 255, 255, 0.06);
+    border-left: 4px solid #8DBEC5;
+    padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dpa-stat-figure {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1;
+    color: #FAC775;
+  }
+
+  .dpa-stat-text {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #e4ebf1;
+  }
+
+  .dpa-leadin-close {
+    max-width: 760px;
+    margin: 0 auto 1.25rem;
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: #ffffff;
+  }
+
+  .dpa-leadin-close strong {
+    color: #FAC775;
+    font-weight: 600;
+  }
+
+  .dpa-leadin-handoff {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  .dpa-leadin-sources {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .dpa-leadin-section { padding: 3.5rem 1.25rem; }
+    .dpa-stat-figure    { font-size: 1.875rem; }
+  }
+</style>
