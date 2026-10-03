@@ -101,7 +101,7 @@ posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // --- Write each post page ---
 for (const post of posts) {
-  const tagsEyebrow = post.tags.length ? post.tags.join(' · ') : 'Blog';
+  const tagsEyebrow = post.tags.length ? post.tags.join(' · ') : 'Insight';
   const heroBlock = post.heroImage
     ? `<img src="${escapeHtml(post.heroImage)}" alt="${escapeHtml(post.heroAlt)}" style="width:100%; border-radius:var(--radius); margin-bottom:30px;">`
     : '';
